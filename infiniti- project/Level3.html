@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Product Search</title>
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+   <link href="/your-path-to-uicons/css/uicons-[your-style].css" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  
+<style>
+ 
+
+
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+    }
+
+    header h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    /* Navigation */
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      color: red;
+    }
+
+    nav ul li {
+      margin-right: 10px;
+      color: red;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: rgb(172, 90, 90);
+      background-color: #fff;
+      padding: 10px 15px;
+      border-radius: 4px;
+    }
+
+    
+
+
+
+
+     
+
+
+    .container4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-gap: 5px;
+}
+
+.container4 img {
+  max-width: 150%;
+  height: auto;
+}
+
+.container4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container4 img {
+  max-width: 100%;
+  height: 95%;
+  width: 88%;
+} 
+    
+
+
+
+
+    /* Apply styles to the <a> tags */
+.menu-item a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  background-color: rgb(199, 188, 188);
+  text-decoration: none;
+}
+
+/* Hover effect */
+.menu-item a:hover {
+  background-color: #555;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .menu-item {
+    width: 50%;
+  }
+}
+
+
+
+
+
+
+    /* Search Container */
+    #searchContainer {
+      margin: 20px 0;
+    }
+
+    #searchInput {
+      width: 300px;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    #searchButton {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* Featured Sections */
+    section.container {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    section.container h2 {
+      font-size: 20px;
+      margin: 0 0 10px 0;
+    }
+
+    section.container p {
+      margin: 0;
+    }
+
+    /* Auction and Services Sections */
+    section#auctionSection,
+    section#productsSection,
+    section#servicesSection {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 20px;
+    }
+
+    section#servicesSection img {
+      width: 100%;
+      height: auto;
+    }
+
+    section#servicesSection h2 {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    nav ul.nav {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+      
+    }
+
+    nav ul.nav li {
+      margin: 0 5px;
+      
+    }
+
+    nav ul.nav li a {
+      color: #fff;
+      text-decoration: none;
+
+    }
+
+    footer .form-inline {
+      margin-top: 10px;
+    }
+
+    footer .form-inline input {
+      padding: 5px;
+      border-radius: 4px;
+      border: none;
+      width: 200px;
+    }
+
+    footer .form-inline button {
+      padding: 5px 10px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    footer .text-center {
+      text-align: center;
+    }
+
+    /* CSS for responsive section */
+.container {
+  position: relative;
+  overflow: hidden;
+}
+
+#servicesSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  background-color: #f2f2f2;
+  transition: transform 0.3s ease;
+}
+
+#servicesSection:hover {
+  transform: scale(1.05);
+  background-color: #e6e6e6;
+}
+
+#servicesSection img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  /* Additional styles for larger screens */
+  #servicesSection {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+
+.container {
+  position: relative;
+  overflow: hidden;
+}
+
+.eventContainer {
+  margin-bottom: 20px;
+}
+
+section {
+  padding: 20px;
+   
+}
+
+@media (min-width: 768px) {
+  /* Additional styles for larger screens */
+  .eventContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  section {
+    flex: 1;
+    margin: 0 10px;
+  }
+}
+
+    
+     
+.container {
+  position: relative;
+  overflow: hidden;
+}
+
+.centerNav {
+  text-align: center;
+}
+
+.centerImage {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  /* Additional styles for larger screens */
+  .centerNav {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .centerImage {
+    margin-top: 50px;
+  }
+  
+  section {
+    margin: 0px ;
+  }
+}
+
+
+
+    
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.featured-service {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.featured-service img {
+  margin-right: 20px;
+}
+
+.service-title {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.service-price {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.service-time-left,
+.service-bids,
+.service-shipping {
+  color: #777;
+  margin-bottom: 5px;
+}
+
+
+
+/*for explore more catogary*/
+#categoriesSection {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.category-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-item {
+  width: 200px;
+  margin: 10px;
+}
+
+.category-title {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+}
+
+
+/*for popular construction*/
+#categoriesSection {
+  text-align: center;
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.category-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.category-item {
+  flex: 0 0 auto;
+  width: 200px;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.category-title {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.category-item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .category-item {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+
+ 
+#categoriesSection {
+  text-align: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+
+}
+
+.menu-item {
+  margin-right: 20px;
+  flex: 0 0 auto;
+  width: 200px;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  color:red;
+}
+
+
+.menu-item:last-child {
+  margin-right: 0;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.menu-item a:hover {
+  color: #000;
+}
+
+ 
+
+
+ 
+ 
+ 
+/*for search*/
+section {
+  text-align: center;
+  padding: 81px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+#searchContainer {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+input[type="text"] {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.fa-filter {
+  margin-top: 20px;
+}
+
+#servicesSection1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .service-item {
+    margin-bottom: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f2f2f2;
+   
+    transition: transform 0.3s ease;
+  }
+  .service-item:hover {
+    transform: scale(1.05);
+  }
+
+</style>
+</head>
+
+
+<body >
+
+
+<section  style="background-image: url('back.jpg');">
+    <div>
+       
+        <i class="fi fi-ro-square-right"></i>
+
+        <section>
+            <header>
+              <h1>Product Search</h1>
+              <div id="searchContainer" class="container">
+                <div class="input-group">
+                  <input id="searchbar" onkeyup="search_product()" type="text" name="search" placeholder="Search Product..">
+                  <button type="submit" id="searchButton" class="btn btn-primary">Search</button>
+                </div>
+                <i class="fa fa-filter" style="font-size:36px; margin-left: 10px;">Filter</i>
+              </div>
+            </header>
+            <h2>Facility management > Maintainanance services > level 3</h2>
+        </section>
+
+    
+        
+              
+    
+          <section id="auctionSection" class="container">
+            <h2>Trending Auctions    <br/><a href="D:\infiniti- project\view-all.html">View All</a></h2> 
+            <p>See what's popular across thousands of Auctions</p>
+            <hr/>
+            <section id="servicesSection" class="container">
+              <img src="img.png" alt="Watch Image"  width="200" height="300">
+              <h2>MENS SEIKO KENETIC TITANIUM 100M WRIST WATCH! No Reserve!</h2>
+              <p>$18.50</p>
+              <p>Time left: 6d 13h 52 sec</p>
+              <p>5 bids</p>
+              <p>+ $11.60 shipping</p>
+            </section>
+    
+            <section id="servicesSection" class="container">
+              <img src="img.png" alt="Watch Image"  width="200" height="300">
+              <h2>MENS SEIKO KENETIC TITANIUM 100M WRIST WATCH! No Reserve!</h2>
+              <p>$18.50</p>
+              <p>Time left: 6d 13h 52 sec</p>
+              <p>5 bids</p>
+              <p>+ $11.60 shipping</p>
+            </section>
+    
+            <section id="servicesSection" class="container">
+              <img src="img.png" alt="Watch Image"  width="200" height="300">
+              <h2>MENS SEIKO KENETIC TITANIUM 100M WRIST WATCH! No Reserve!</h2>
+              <p>$18.50</p>
+              <p>Time left: 6d 13h 52 sec</p>
+              <p>5 bids</p>
+              <p>+ $11.60 shipping</p>
+            </section>
+          </section>
+    
+          <hr/>
+    
+          <section id="productsSection" class="container">
+            <h2>Featured Products   <br/><a href="D:\infiniti- project\view-all.html">View All</a></h2>
+            <p>See what's popular across thousands of Products</p>
+            <hr/>
+            <section id="servicesSection" class="container">
+              <img src="img.png" alt="Watch Image"  width="200" height="300">
+              <h2>MENS SEIKO KENETIC TITANIUM 100M WRIST WATCH! No Reserve!</h2>
+              <p>$18.50</p>
+              <p>Time left: 6d 13h 52 sec</p>
+              <p>5 bids</p>
+              <p>+ $11.60 shipping</p>
+            </section>
+    
+            <section id="servicesSection" class="container">
+              <img src="img.png" alt="Watch Image"  width="200" height="300">
+              <h2>MENS SEIKO KENETIC TITANIUM 100M WRIST WATCH! No Reserve!</h2>
+              <p>$18.50</p>
+              <p>Time left: 6d 13h 52 sec</p>
+              <p>5 bids</p>
+              <p>+ $11.60 shipping</p>
+            </section>
+    
+            <section id="servicesSection" class="container">
+              <img src="img.png" alt="Watch Image"  width="200" height="300">
+              <h2>MENS SEIKO KENETIC TITANIUM 100M WRIST WATCH! No Reserve!</h2>
+              <p>$18.50</p>
+              <p>Time left: 6d 13h 52 sec</p>
+              <p>5 bids</p>
+              <p>+ $11.60 shipping</p>
+            </section>
+          </section>
+    
+          <hr/>
+    
+          <section id="servicesSection1" class="container">
+            <h2 class="section-title">Featured Services</h2>
+            <p>See what's popular across thousands of Products</p>
+            <hr>
+          
+            <div class="service-item">
+              <img src="img.png" alt="Watch Image" width="200" height="300">
+              <h2 class="service-title">MENS SEIKO KINETIC TITANIUM 100M WRIST WATCH! No Reserve!</h2>
+              <p>$18.50</p>
+              <p>Time left: 6d 13h 52 sec</p>
+              <p>5 bids</p>
+              <p>+ $11.60 shipping</p>
+            </div>
+          
+            <div class="service-item">
+              <img src="img.png" alt="Watch Image" width="200" height="300">
+              <h2 class="service-title">MENS SEIKO KINETIC TITANIUM 100M WRIST WATCH! No Reserve!</h2>
+              <p>$18.50</p>
+              <p>Time left: 6d 13h 52 sec</p>
+              <p>5 bids</p>
+              <p>+ $11.60 shipping</p>
+            </div>
+          
+            <div class="service-item">
+              <img src="img.png" alt="Watch Image" width="200" height="300">
+              <h2 class="service-title">MENS SEIKO KINETIC TITANIUM 100M WRIST WATCH! No Reserve!</h2>
+              <p>$18.50</p>
+              <p>Time left: 6d 13h 52 sec</p>
+              <p>5 bids</p>
+              <p>+ $11.60 shipping</p>
+            </div>
+          </section>
+          
+          <hr/>
+     
+             
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <script src="script.js"></script>
+            
+            <!-- Add Bootstrap JavaScript (optional) -->
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        
+    
+           
+          </footer>
+        </main>
+      </div>
+
+      </script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+        $(function() {
+          $("#viewAllContent").load("view-all.html");
+        });
+      </script>
+      <div id="viewAllContent"></div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Categories</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-top: 40px;
+    }
+
+    h2 {
+      color: #666;
+      margin-top: 30px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    #searchContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      display: flex;
+    }
+
+    #searchbar {
+      width: 70%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px 0 0 5px;
+    }
+
+    #searchButton {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+
+    main {
+      margin-top: 30px;
+    }
+
+    .category-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-gap: 20px;
+    }
+
+    .category-item {
+      background-color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+
+    .category-item img {
+      margin-bottom: 10px;
+    }
+
+    .category-title {
+      font-size: 16px;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    .section-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+      align-items: center;
+      float: left;
+      margin-left: 90px   ;
+      padding: 5px;
+    }
+    #sy1 {
+  float: left;
+  margin-left: 350px  ;
+    padding: 10px;
+}
+  </style>
+</head>
+
+<body>
+  <section>
+    <header>
+         
+      <h1> <img  id="sy1" src="lessthan.png" alt="Watch Image"  width="50" height="50"><a href="View all">View All</a></h1>
+
+      <div id="searchContainer" class="container">
+        <div class="input-group">
+          <input id="searchbar" onkeyup="search_product()" type="text" name="search"
+            placeholder="Search Categories for Insights - Consumer Electronics.." class="form-control">
+          <div class="input-group-append">
+            <button type="submit" id="searchButton" class="btn btn-primary">Search</button>
+          </div>
+        </div>
+      </div>
+    </header>
+  </section>
+
+  <h2>Recent</h2>
+  <main>
+    <section id="categoriesSection" class="container">
+      <div class="category-container">
+        <div class="category-item">
+          <img src="img1.png" alt="Watch Image" width="100" height="200">
+          <h2 class="category-title" ><a href="D:\infiniti- project\cart1.html">Facility Management</a></h2>
+        </div>
+
+        <div class="category-item">
+          <img src="img2.png" alt="Watch Image" width="100" height="200">
+          <h2 class="category-title">Logistics</h2>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <h2>All Categories</h2>
+  <main>
+    <section id="categoriesSection" class="container">
+       
+     
+      <div class="category-container">
+        <div class="category-item">
+          <img src="aggri.jpg" alt="Watch Image" width="100" height="200">
+          <h2 class="category-title">Agriculture</h2>
+        </div>
+
+        <div class="category-item">
+          <img src="apperial.jpg" alt="Watch Image" width="100" height="200">
+          <h2 class="category-title">Apparels</h2>
+        </div>
+
+        <div class="category-item">
+          <img src="beuty.jpg" alt="Watch Image" width="100" height="200">
+          <h2 class="category-title">Beauty</h2>
+        </div>
+
+        <div class="category-item">
+          <img src="chermical.jpg" alt="Watch Image" width="100" height="200">
+          <h2 class="category-title">Chemicals</h2>
+        </div>
+
+        <div class="category-item">
+          <img src="construction.jpg" alt="Watch Image" width="100" height="200">
+          <h2 class="category-title">Construction</h2>
+        </div>
+
+        <div class="category-item">
+          <img src="consumer.jpg" alt="Watch Image" width="100" height="200">
+          <h2 class="category-title">Consumer</h2>
+        </div>
+
+        <div class="category-item">
+          <img src="eletrivc.jpg" alt="Watch Image" width="100" height="200">
+          <h2 class="category-title">Electric</h2>
+        </div>
+
+        <div class="category-item">
+          <img src="fabric.jpg" alt="Watch Image" width="100" height="200">
+          <h2 class="category-title">Fabric</h2>
+        </div>
+
+        <div class="category-item">
+          <img src="gifts.jpg" alt="Watch Image" width="100" height="200">
+          <h2 class="category-title">Gifts</h2>
+        </div>
+
+        <div class="category-item">
+          <img src="health.jpg" alt="Watch Image" width="100" height="200">
+          <h2 class="category-title">Health</h2>
+        </div>
+
+        <div class="category-item">
+          <img src="home.jpg" alt="Watch Image" width="100" height="200">
+          <h2 class="category-title">Home</h2>
+        </div>
+
+        <div class="category-item">
+          <img src="office.jpg" alt="Watch Image" width="100" height="200">
+          <h2 class="category-title">Office</h2>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
